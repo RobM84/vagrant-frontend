@@ -18,7 +18,7 @@ Vagrant.configure("2") do |config|
   config.vm.network :forwarded_port, guest: 3306, host: 3307
 
   # This is to ensure Magento can write it's generated data to our media and var directories.
-  config.vm.synced_folder "../flightright-website", "/vagrant/frontend", extra: 'dmode=777,fmode=777'
+  config.vm.synced_folder "../flightright-website", "/vagrant/frontend", mount_options: ["dmode=777", "fmode=777"]
 
   config.vm.provider :virtualbox do |vb|
     # headless mode = false, gui mode = true
